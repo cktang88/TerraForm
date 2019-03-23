@@ -7,7 +7,6 @@ function ListView() {
     return (
         <ul>
         {this.props.items.forEach(function(item) {
-
            return (
               <Card id={item.id} text={item.text} />)
         })} 
