@@ -14,9 +14,9 @@ function ListView(props) {
             </div>
 
             <ul>
-            {(props.items || []).map(i => {
+            {(props.items || []).map((elem, index) => {
                 return (
-                    <Card item={i} key={i[0]}/>)
+                    <Card item={elem} uid={index} key={index}/>)
                 })}
             </ul>
         </div>

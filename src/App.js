@@ -7,7 +7,7 @@ import ListView from './ListView';
 import Profile from './Profile';
 import fetchData from './Api';
 
-import { BrowserRouter, Route , Switch} from 'react-router-dom';;
+import {Route, Switch} from 'react-router-dom';
 
 
 function App() {
@@ -30,7 +30,9 @@ function App() {
           <h1 className="App-title">Gforms view</h1>
         </header>
         <Switch>
+          {/* default page */}
           <Route exact path='/' component = {() => <ListView items={data}/>}/>
+          {/* matches `/user/:id` as well */}
           <Route path='/user' component = {Profile}/>
         </Switch>
       </div>

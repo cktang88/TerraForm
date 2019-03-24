@@ -1,17 +1,29 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-function Card(props) {
+import {Link} from 'react-router-dom';
 
+function Card(props) {
     
     const [timestamp, name, year] = props.item;
 
-    return (
-      <div>
+    const unique_id = props.uid;
 
-        <p>{name}</p>
-        <p>{timestamp}</p>
-        <p>{year}</p>
+    return (
+      <div class='card'>
+
+        <div class='name'>{name}</div>
+        <div>
+            <span class='time'>{timestamp}</span>        
+            <span class='year'>{year}</span>
+            <span class='btnlink'>
+                <Link to={`/user:${unique_id}`}>
+                    <button type='button'>
+                        View Profile
+                    </button>
+                </Link>
+            </span>
+        </div>
       </div>
     );
   }
