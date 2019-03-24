@@ -25,7 +25,10 @@ function Item(props) {
             <span className='time'>{timestamp}</span>        
             <span className='year'>{year}</span>
             <span className='btnlink'>
-                <Link to={`/user:${unique_id}`}>
+                <Link to={{
+                  pathname: `/user/${unique_id}`,
+                  state: {name}
+                }}>
                     <Button type='button'>
                         View Profile
                     </Button>

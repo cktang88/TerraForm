@@ -14,6 +14,7 @@ function App() {
 
 
   const [data, setData] = useState([]);
+  const [user, setUser] = useState('');
 
   // update
   useEffect(() => {
