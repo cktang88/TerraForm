@@ -20,8 +20,7 @@ function App() {
       setData(data.values);
       console.log('updated: ', data);
     })
-
-  });
+  }, []);
 
   return (
     <div className="App">
