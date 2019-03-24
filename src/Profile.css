@@ -2,3 +2,19 @@
     /* background: blue; */
     /* font-size: 2em; */
 }
+
+.profile-display {
+    color: white;
+}
+
+.button {
+    padding-top: 30px;
+}
+
+.comment {
+    padding-top: 20px;
+}
+
+.table {
+    -webkit-text-fill-color: white;
+}

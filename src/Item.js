@@ -21,15 +21,9 @@ function Item(props) {
         margin='20px'
         background="#03DAC6"
       >
-<<<<<<< Updated upstream
         <div className='name'>{item['Name']}</div>
             <div>{item['Timestamp']}</div>
             <div>{item['Year']}</div>
-=======
-        <div>{name}</div>
-            <div>{timestamp}</div>
-            <div>{year}</div>
->>>>>>> Stashed changes
             <span className='btnlink'>
                 <Link to={{
                   pathname: `/user/${unique_id}`,
