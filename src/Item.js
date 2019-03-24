@@ -19,18 +19,24 @@ function Item(props) {
         elevation={2}
         padding='20px'
         margin='20px'
-        background="tint2"
+        background="#03DAC6"
       >
+<<<<<<< Updated upstream
         <div className='name'>{item['Name']}</div>
             <div>{item['Timestamp']}</div>
             <div>{item['Year']}</div>
+=======
+        <div>{name}</div>
+            <div>{timestamp}</div>
+            <div>{year}</div>
+>>>>>>> Stashed changes
             <span className='btnlink'>
                 <Link to={{
                   pathname: `/user/${unique_id}`,
                   // TODO: Pass the state fields dynamically (not specifically tailored to this app)
                   state: item
                 }}>
-                    <Button type='button'>
+                    <Button background="#6200EE" appearance="primary">
                         View Profile
                     </Button>
                 </Link>
