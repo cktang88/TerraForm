@@ -44,7 +44,7 @@ function App() {
       <div className="App">
         <header className="App-header">
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <h1 className="App-title">Audition Manager</h1>
+          <h1 className="App-title">Project Title</h1>
         </header>
         <Switch>
           {/* default page */}
