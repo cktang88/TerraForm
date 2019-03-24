@@ -2,21 +2,11 @@
 
 }
 
-.name {
-    font-size: 1.5em;
-}
-
-.time {
-    float: left;
-}
-
-.year {
-    float: left;
-    margin-left: 2em;
-}
-
-.btnlink {
-    float: right;
+.wrapper {
+    display: block;
+    overflow: hidden;
+    font-size: 1em;
+    text-align: center;
 }
 
 span {

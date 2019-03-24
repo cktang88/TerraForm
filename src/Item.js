@@ -14,16 +14,16 @@ function Item(props) {
     const unique_id = props.uid;
 
     return (
-      <Card
+      
+      <Card className = "wrapper"
         elevation={2}
         padding='20px'
         margin='20px'
         background="tint2"
       >
         <div className='name'>{name}</div>
-        <span>
-            <span className='time'>{timestamp}</span>        
-            <span className='year'>{year}</span>
+            <div>{timestamp}</div>
+            <div>{year}</div>
             <span className='btnlink'>
                 <Link to={{
                   pathname: `/user/${unique_id}`,
@@ -34,8 +34,8 @@ function Item(props) {
                     </Button>
                 </Link>
             </span>
-        </span>
       </Card>
+
     );
   }
 

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 
 import Item from './Item.js';
+import './ListView.css'
 
 import {SearchInput} from 'evergreen-ui';
 
@@ -15,12 +16,12 @@ function ListView(props) {
                 <SearchInput placeholder='Search' type='text' onChange={searchChanged}></SearchInput >
             </div>
 
-            <ul>
+            <div className='list-view-wrapper'>
             {(props.items || []).map((elem, index) => {
                 return (
                     <Item item={elem} uid={index} key={index}/>)
                 })}
-            </ul>
+            </div>
         </div>
     )
 }
