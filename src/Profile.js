@@ -14,20 +14,13 @@ function Profile(props) {
     const item = props.history.location.state;
     console.log(item);
     return (
-        <div>
-            <div>
-                <Link to='/'>
-                    <Button type='button'>
-                        Back
-                    </Button>
-                </Link>
-            </div>
+        <div className='profile-display'>
             <Pane id="top-container">
                 <h2>{item['Name']}</h2>
                 <h3>{item['Year']}</h3>
             </Pane>
             <Pane id="mid-container">
-                <div id="left-component">
+                <div className='table' id="left-component">
                     <Table>
                     <Table.Body>
                     {(Object.keys(item) || []).map((key, i) => {
@@ -57,12 +50,22 @@ function Profile(props) {
                     })}
                 </ul>
                 
+                <div className='comment'>
                 <Pane>
                     <TextInput type='text' placeholder='Add comment'></TextInput>
-                    <Button onClick={() => submitComment()}>
+                    <Button appearance="primary" intent="success" onClick={() => submitComment()}>
                         Submit
                     </Button>
                 </Pane>
+                </div>
+                <div className='button'>
+                <Link to='/'>
+                    <Button type='button'>
+                        Back
+                    </Button>
+                </Link>
+            </div>
+                
             </Pane>
         
         </div>
