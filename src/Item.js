@@ -26,8 +26,8 @@ function Item(props) {
         margin='20px'
         // background="rgb(39,186,116)"
       >
-        <div className='name'>{name}</div>
-            <div>
+        <div className='submission-name'>{name}</div>
+            <div className="submission-detailed-info">
             {dispElems.map((elem, index) => {
                 return (
                     <div key={index}>{elem}</div>

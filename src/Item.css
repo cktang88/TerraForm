@@ -14,6 +14,17 @@ h2 {
     flex: 1; 
 }
 
+.submission-name {
+    font-weight: bold;
+}
+
+.submission-detailed-info {
+    font-weight: lighter;
+    color: gray;
+    margin-top: 3px;
+    margin-bottom: 10px;
+}
+
 button {
     background: #3897f0;
     padding: 8px 16px;
