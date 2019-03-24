@@ -21,7 +21,7 @@ function Item(props) {
         margin='20px'
         background="rgb(39,186,116)"
       >
-        <div className='name'>{item['Name']}</div>
+        <div className='name'>{`${item['First Name']} ${item['Last Name']}`}</div>
             <div>{item['Timestamp']}</div>
             <div>{item['Year']}</div>
             <span className='btnlink'>

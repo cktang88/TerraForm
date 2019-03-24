@@ -5,7 +5,9 @@ console.log(SPREADSHEET_ID);
 const makeURL = range => `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${range}?key=${KEY}`;
 
 const fetchData = () => {
-    // Sheet1 is default name
+    // Sheet1 is default name (Not for forms...)
+    // We need to make sure that the Spreadsheet is actually
+    // named 'Sheet1'
     return fetch(makeURL('Sheet1')).then(resp => resp.json())
 };
 
