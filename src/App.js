@@ -11,13 +11,13 @@ console.log('lol2')
 function App() {
 
 
-  const [data, setData] = useState(['hello']);
+  const [data, setData] = useState([]);
 
   // update
   useEffect(() => {
     console.log('lol22')
     fetchData().then((data) =>{
-      setData(data);
+      setData(data.values);
       console.log('updated: ', data);
     })
 

@@ -10,7 +10,7 @@ function Card(props) {
 
     return (
       <div>
-        <p>id {props.id}</p>
+        <p>id {props.timestamp}</p>
         <p>{props.text}</p>
 
         <ul>
@@ -25,7 +25,7 @@ function Card(props) {
         </ul>
 
         <input type='text' placeholder='comment'></input>
-        <button onClick={() => setData(count + 1)}>
+        <button onClick={submitComment}>
           Submit
         </button>
       </div>
