@@ -59,6 +59,7 @@
 .bottom-container {
     display: block;
     height: 400px;
+    margin-left:20px;
     overflow-y: scroll;
     overflow-x: hidden;
     color: black;
@@ -82,7 +83,7 @@
 }
 
 .comment {
-    padding-top: 20px;
+    padding: 20px;
 }
 
 .table {
