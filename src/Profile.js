@@ -24,7 +24,7 @@ function Profile(props) {
         }
 
         document.getElementById('newcomment').value = ''; // clear
-        const author = 'Current User' // TODO: login stuff
+        const author = window.person || 'Guest' // TODO: login stuff
         postComment(unique_id, text, author)
         .then(() => refreshComments()); // refresh after post
     }

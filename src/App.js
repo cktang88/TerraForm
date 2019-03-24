@@ -5,6 +5,7 @@ import './App.css';
 import ListView from './ListView';
 import Profile from './Profile';
 import {fetchData} from './Api';
+import LoginForm from './LoginForm';
 
 import {Route, Switch} from 'react-router-dom';
 
@@ -25,6 +26,7 @@ function App() {
 
 
   const [data, setData] = useState([]);
+  const [isAuthenticated, setAuth] = useState(false);
 
   const updateFormsData = () => {
     fetchData().then((ogData) =>{
@@ -34,6 +36,7 @@ function App() {
       console.log('arr of arr: ', newdata);
     })
   };
+
 
   // update once initially
   useEffect(() => {
@@ -52,6 +55,8 @@ function App() {
           <Route exact path='/' component = {() => <ListView items={data}/>}/>
           {/* matches `/user/:id` as well */}
           <Route path='/user' component = {Profile}/>
+          {/* login page */}
+          <Route path='/login' component = {LoginForm}/>
         </Switch>
       </div>
   );

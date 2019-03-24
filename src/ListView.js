@@ -6,9 +6,16 @@ import './ListView.css'
 
 import {SearchInput} from 'evergreen-ui';
 
+import jwtDecode from 'jwt-decode';
+
 function ListView(props) {
     const orig_items = props.items;
     const [items, setItems] = useState(props.items);
+
+    const id_token = window.location.href.split('id_token=')[1].split('&')[0]; // hacky way to get url param
+
+    const person = jwtDecode(id_token);
+    window.person = person.name || person.email; // global state, should prob use Context API
 
     // everything search
     function searchChanged(query) {

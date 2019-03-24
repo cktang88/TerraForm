@@ -21,7 +21,7 @@ function Item(props) {
     return (
       
       <Card className = "wrapper"
-        elevation={5}
+        elevation={4}
         padding='20px'
         margin='20px'
         background="rgb(39,186,116)"
