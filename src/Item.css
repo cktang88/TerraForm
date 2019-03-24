@@ -1,0 +1,24 @@
+.item {
+
+}
+
+.name {
+    font-size: 1.5em;
+}
+
+.time {
+    float: left;
+}
+
+.year {
+    float: left;
+    margin-left: 2em;
+}
+
+.btnlink {
+    float: right;
+}
+
+span {
+    
+}
