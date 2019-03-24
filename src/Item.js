@@ -10,7 +10,6 @@ import { Button, Card } from 'evergreen-ui';
 function Item(props) {
     
     const [timestamp, name, year, pref_roles, comments] = props.item;
-    console.log(props.item);
 
     const unique_id = props.uid;
 

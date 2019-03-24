@@ -9,19 +9,28 @@ import {fetchData} from './Api';
 
 import {Route, Switch} from 'react-router-dom';
 
+// This function creates a datapoint object, with
+// the first row of the spreadsheet as its fields
+function createObject(headers, arr) {
+  let obj = {};
+  headers.forEach((header, i) => {
+    obj[header] = arr[i];
+  });
+  return obj;
+}
+
 
 function App() {
 
 
   const [data, setData] = useState([]);
-  const [user, setUser] = useState('');
 
   // update
   useEffect(() => {
-    fetchData().then((data) =>{
-      data.values.shift();
-      setData(data.values);
-      console.log('updated: ', data);
+    fetchData().then((ogData) =>{
+      const headers = ogData.values.shift();
+      setData(ogData.values.map(elem => createObject(headers, elem)));
+      console.log('arr of arr: ', ogData.values);
     })
   }, []);
 
