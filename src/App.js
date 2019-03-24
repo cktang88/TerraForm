@@ -7,16 +7,21 @@ import ListView from './ListView';
 
 import fetchData from './Api';
 
-
+console.log('lol2')
 function App() {
 
-  const [data, setData] = useState({});
+
+  const [data, setData] = useState(['hello']);
 
   // update
   useEffect(() => {
-    const data = fetchData();
+    fetchData().then((data) =>{
+      setData(data);
+      console.log('updated: ', data);
+    })
+
+    // cleanup
     return () => {
-  
     };
   });
 
@@ -24,7 +29,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">Welcome to React</h1>
+        <h1 className="App-title">Gforms view</h1>
       </header>
       <ListView items={data}/>
       <p className="App-intro">

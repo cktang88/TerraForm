@@ -3,7 +3,11 @@ import styled from 'styled-components';
 
 import Card from './Card.js';
 
-function ListView() {
+function ListView(props) {
+
+    console.log(props);
+    const {items = []} = props;
+    console.log(items, typeof items);
     return (
         <div>
             <h2>Submissions</h2>
@@ -13,7 +17,7 @@ function ListView() {
             </div>
 
             <ul>
-            {this.props.items.forEach(item => {
+            {items.map(item => {
                 return (
                     <Card id={item.id} text={item.text} />)
                 })}

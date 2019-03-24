@@ -3,7 +3,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-function Profile() {
+function Profile(props) {
     return (
         <div>
             <h2>{props.name}</h2>
