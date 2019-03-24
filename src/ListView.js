@@ -16,7 +16,7 @@ function ListView(props) {
             <ul>
             {props.items.map(item => {
                 return (
-                    <Card {...item} />)
+                    <Card item={item}/>)
                 })}
             </ul>
         </div>

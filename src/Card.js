@@ -6,7 +6,7 @@ function Card(props) {
     // const [count, setCount] = useState(0);
 
     
-    const [timestamp, name, year] = props;
+    const [timestamp, name, year] = props.item;
 
     return (
       <div>
