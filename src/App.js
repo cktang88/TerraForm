@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
-import logo from './logo.svg';
 
 import './App.css';
 import ListView from './ListView';
@@ -14,6 +13,8 @@ import {Route, Switch} from 'react-router-dom';
 const createObject = (headers, arr) => {
   let obj = {};
   headers.forEach((header, i) => {
+    if (header.toLowerCase() == 'comments') // remove all comments fields to avoid name clash
+      return;
     obj[header] = arr[i];
   });
   return obj;

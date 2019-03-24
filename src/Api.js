@@ -12,7 +12,7 @@ const fetchData = () => {
 // fetch comments by key
 const fetchComments = (key) => {
     console.log(key)
-    return fetch(commentsURL)
+    return fetch(COMMENTS_URL)
         .then(data => data.json())
 };
 
