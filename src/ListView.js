@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-import Card from './Card.js';
+import Item from './Item.js';
+
+import {SearchInput} from 'evergreen-ui';
 
 function ListView(props) {
     console.log(props);
@@ -10,13 +12,13 @@ function ListView(props) {
             <h2>Submissions</h2>
             <br></br>
             <div>
-                <input type='text' onChange={searchChanged}></input>
+                <SearchInput placeholder='Search' type='text' onChange={searchChanged}></SearchInput >
             </div>
 
             <ul>
             {(props.items || []).map((elem, index) => {
                 return (
-                    <Card item={elem} uid={index} key={index}/>)
+                    <Item item={elem} uid={index} key={index}/>)
                 })}
             </ul>
         </div>
