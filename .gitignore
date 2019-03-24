@@ -1,5 +1,8 @@
+# build files
 .cache
 dist
+# config dir
+config/config.js
 
 # Logs
 logs

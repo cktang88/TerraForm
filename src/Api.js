@@ -1,13 +1,11 @@
-const SPREADSHEET_ID = 
-//'1b3cMRIILqPjdNPxTmAhjKAw0oYgXV1D8Aro2lrTvdDQ'
-'1uS4Nr_Vl6ZljcKsmLRnDS-X9uYIlNvkS4lQAhcSXhIg';
-const KEY = 'AIzaSyB5NPQXUnbJYcNBwZ0vHwbpkCv8Jp-EB5Y';
+import {SPREADSHEET_ID, KEY, COMMENTS_URL} from '../config/config.js';
+
+console.log(SPREADSHEET_ID);
 
 const makeURL = range => `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${range}?key=${KEY}`;
 
-const commentsURL = 'https://api.myjson.com/bins/95ny6';
-
 const fetchData = () => {
+    // Sheet1 is default name
     return fetch(makeURL('Sheet1')).then(resp => resp.json())
 };
 
@@ -34,7 +32,7 @@ const postComment = (key, text, author) => {
             data[key].push(newcomment);
             return data;
         })
-        .then(data => putHelper(commentsURL, data))
+        .then(data => putHelper(COMMENTS_URL, data))
         .then(data => console.log(data)) // JSON-string from `response.json()` call
         .catch(error => console.error(error));
 };
