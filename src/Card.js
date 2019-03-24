@@ -4,17 +4,20 @@ import styled from 'styled-components';
 function Card(props) {
     // Declare a new state variable, which we'll call "count"
     // const [count, setCount] = useState(0);
+
     
+    const [timestamp, name, year] = props;
+
     return (
       <div>
         <p>id {props.id}</p>
         <p>{props.text}</p>
 
         <ul>
-        {props.comments.forEach(comment => {
+        {(props.comments || []).map(comment => {
            return (
             <div>
-                <h2>{this.props.comments.author}</h2>
+                <h2>{props.comments.author}</h2>
                 <div>{comment}</div>
             </div>
             )

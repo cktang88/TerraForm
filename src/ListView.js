@@ -5,21 +5,20 @@ import Card from './Card.js';
 
 function ListView(props) {
 
-    console.log(props);
-    const {items = []} = props;
-    console.log(items, typeof items);
+    const items = props.values;
+
     return (
         <div>
             <h2>Submissions</h2>
             <br></br>
             <div>
-                <input type='text' onchange='searchChanged'></input>
+                <input type='text' onChange={searchChanged}></input>
             </div>
 
             <ul>
             {items.map(item => {
                 return (
-                    <Card id={item.id} text={item.text} />)
+                    <Card {...item} />)
                 })}
             </ul>
         </div>

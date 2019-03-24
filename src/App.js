@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import logo from './logo.svg';
 
 import './App.css';
@@ -15,14 +15,12 @@ function App() {
 
   // update
   useEffect(() => {
+    console.log('lol22')
     fetchData().then((data) =>{
       setData(data);
       console.log('updated: ', data);
     })
 
-    // cleanup
-    return () => {
-    };
   });
 
   return (
