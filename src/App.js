@@ -25,14 +25,19 @@ function App() {
 
   const [data, setData] = useState([]);
 
-  // update
-  useEffect(() => {
+  const updateFormsData = () => {
     fetchData().then((ogData) =>{
       const headers = ogData.values.shift();
       const newdata = ogData.values.map(elem => createObject(headers, elem));
       setData(newdata);
       console.log('arr of arr: ', newdata);
     })
+  };
+
+  // update once initially
+  useEffect(() => {
+    updateFormsData();
+    setInterval(updateFormsData, 5000); // every five secs periodic update
   }, []);
 
   return (
