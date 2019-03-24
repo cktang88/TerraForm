@@ -10,9 +10,8 @@ function Card() {
         <p>id {props.id}</p>
         <p>{props.text}</p>
 
-
         <ul>
-        {this.props.comments.forEach(comment => {
+        {props.comments.forEach(comment => {
            return (
             <div>
                 <h2>{this.props.comments.author}</h2>
