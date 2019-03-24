@@ -8,14 +8,18 @@
 }
 
 .bottom-container {
-    height: 100px;
+    display: block;
+    height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .profile-display {
     display: grid;
     grid-template-columns: 66% 34%;
-    grid-template-rows: 20px;
     color: white;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .button {
@@ -29,5 +33,11 @@
 }
 
 .table {
+    display: block;
+    background:#212121;
     -webkit-text-fill-color: white;
+}
+
+.table-key {
+    font-weight: bold;
 }
