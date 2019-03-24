@@ -1,13 +1,15 @@
 import React, {useState, useEffect} from 'react';
-// import styled from 'styled-components';
+import styled from 'styled-components';
 import logo from './logo.svg';
 
 import './App.css';
 import ListView from './ListView';
-
+import Profile from './Profile';
 import fetchData from './Api';
 
-console.log('lol2')
+import { BrowserRouter, Route } from 'react-router-dom';;
+
+
 function App() {
 
 
@@ -15,7 +17,6 @@ function App() {
 
   // update
   useEffect(() => {
-    console.log('lol22')
     fetchData().then((data) =>{
       setData(data.values);
       console.log('updated: ', data);
@@ -28,10 +29,10 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h1 className="App-title">Gforms view</h1>
       </header>
-      <ListView items={data}/>
-      <p className="App-intro">
-        To get started, edit <code>src/App.js</code> and save to reload.
-      </p>
+      <Switch>
+        <Route exact path='/' component = {<ListView items={data}/>}/>
+        <Route path='/user' component = {Profile}/>
+      </Switch>
     </div>
   );
 }
