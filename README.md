@@ -3,6 +3,9 @@
 A better viewer for Google Forms responses.
 Made during CrimsonHacks 2019.
 
+![List View](./assets/listview.png)
+![Profile View](./assets/profileview.png)
+
 Usage
 ---
 
