@@ -55,49 +55,48 @@ function Profile(props) {
             <div>
             {dispElems.map((elem, index) => {
                 return (
-                    <h3 key={index}>{elem}</h3>
+                    <React.Fragment key={index}>
+                        {index === 0 ? null : <h3>•</h3>}
+                        <h3 >{elem}</h3>
+                    </React.Fragment>
                 )})
             }</div>
             </Pane>
             <div className='profile-display'>
-            <Pane id="mid-container">
                 <div className='table' id="left-component">
                     <table className='table-proper'>
                     {(Object.keys(item) || []).map((key, i) => {
                     return (
                         <tr key={i}>
                         <td className='table-key'>{key}</td> 
-                        <td>{item[key]}</td>
+                        <td className='table-val'>{item[key]}</td>
                         </tr>
                         )
                     })}
                     </table>
                 </div>
-                <div id="right-component">
-                </div>
-            </Pane>
             <div className='chat-box'>
             <Pane className='bottom-container'>
                 <ul>
                     {comments.map((comment, i) => {
                         return (
+                            <li>
                             <Card key={i} margin={30}>
-                                <div>{comment.author}</div>
-                                <div>{comment.text}</div>
-                                <div>{comment.timestamp}</div>
+                            <div className="comment">
+                                <span className="comment-name">{comment.author}</span> {/*<span className="comment-date">{comment.timestamp.split(',')[0]}</span>*/} - <span className="comment-text">{comment.text}</span> 
+                                </div>
                             </Card>
+                            </li>
                             )
                     })}
                 </ul>
                 </Pane>
                 
-                <div className='comment'>
-                <Pane>
-                    <TextInput id='newcomment' type='text' placeholder='Add comment'></TextInput>
-                    <Button appearance="primary" intent="success" onClick={submitComment}>
+                <div className='comment-box'>
+                    <input id='newcomment' type='text' placeholder='Add comment'></input>
+                    <button id="submit-btn" appearance="primary" intent="success" onClick={submitComment}>
                         Submit
-                    </Button>
-                </Pane>
+                    </button>
                 </div>
     
                 

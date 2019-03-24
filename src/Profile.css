@@ -3,8 +3,57 @@
     /* font-size: 2em; */
 }
 
+.button {
+    margin-top: 35px;
+}
+
+.chat-box {
+    display: grid;
+    grid-template-rows: 1fr auto 15px;
+}
+
+.comment-box {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+
+#newcomment {
+    border-radius: 8px;
+    margin: 0 8px;
+    padding: 0 12px;
+    flex: 1;
+    border: 1px solid lightgray;
+}
+
+#submit-btn {
+    flex: 0;
+}
+
 .title-container {
     color: white;
+    height: calc(100% - 90px);
+    overflow: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+#top-container {
+    color: black;
+    flex: 1;
+}
+
+#top-container h3 {
+    display: inline-block;
+    margin: 12px;
+    font-weight: 500;
+}
+#top-container h2 {
+    margin-bottom: 0;
+}
+
+#left-component {
+    border: none;
 }
 
 .bottom-container {
@@ -12,6 +61,7 @@
     height: 400px;
     overflow-y: scroll;
     overflow-x: hidden;
+    color: black;
 }
 
 .profile-display {
@@ -20,6 +70,9 @@
     color: white;
     padding-left: 30px;
     padding-right: 30px;
+    padding-bottom: 30px;
+    height: calc(100% - 100px);
+    flex: 1;
 }
 
 .button {
@@ -33,21 +86,106 @@
 }
 
 .table {
-    display: block;
-    background:#212121;
-    -webkit-text-fill-color: white;
+    display: grid;
     margin: 1em auto;
-
+    color: white;
+    overflow: auto;
 }
 
 .table-key {
     font-weight: bold;
     float: left;
+    text-align: left;
+}
+
+.table-val {
+    /* border-left: 2px solid lightgray; */
+    float: right;
 }
 
 table {
+    color: black;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    /* width: 100%; */
     table-layout: fixed;
-}
+    overflow: auto;
+    height: 100%;
+  }
+  
+  table caption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em;
+  }
+  
+  table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em 0.1em;
+  }
+  
+  table th,
+  table td {
+    text-align: right;
+  }
+  
+  table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  
+  @media screen and (max-width: 600px) {
+    table {
+      border: 0;
+    }
+  
+    table caption {
+      font-size: 1.3em;
+    }
+    
+    table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    
+    table tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: .625em;
+      padding: 0.625em;
+    }
+    
+    table td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: .8em;
+      text-align: right;
+    }
+    
+    table td::before {
+      /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    table td:last-child {
+      border-bottom: 0;
+    }
+  }
 
 tr {
     /* border-color: white; */
@@ -59,4 +197,27 @@ td {
     margin: 1em;
     word-wrap: break-word;
     /* border-left: white; */
+}
+
+li {
+    list-style-type: none;
+    text-align: left;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.comment-name {
+    font-weight: 600;
+}
+
+.comment-date {
+    font-weight: 200;
+    font-size: 0.8em;
+}
+
+.comment-text {
+    font-weight: 300;
 }
