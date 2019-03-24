@@ -3,12 +3,34 @@ h2 {
 }
 
 .wrapper {
-    display: block;
+    display: flex;
     font-family: 'Roboto', sans-serif;
     color: black;
-    overflow: hidden;
     font-size: 1em;
     text-align: center;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    background: white;
+    flex: 1; 
+}
+
+button {
+    background: #3897f0;
+    padding: 8px 16px;
+    color: white;
+    font-size: 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    border-color: #3897f0;
+    cursor: pointer;
+}
+
+button:hover {
+    filter: brightness(1.1)
+}
+
+a {
+    text-decoration: none;
 }
 
 .view {

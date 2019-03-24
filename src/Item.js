@@ -21,10 +21,10 @@ function Item(props) {
     return (
       
       <Card className = "wrapper"
-        elevation={4}
+        elevation={2}
         padding='20px'
         margin='20px'
-        background="rgb(39,186,116)"
+        // background="rgb(39,186,116)"
       >
         <div className='name'>{name}</div>
             <div>
@@ -40,9 +40,9 @@ function Item(props) {
                   // TODO: Pass the state fields dynamically (not specifically tailored to this app)
                   state: {item, name, dispElems}
                 }}>
-                    <Button appearance="primary">
+                    <button className="view-profile" appearance="primary">
                         View Profile
-                    </Button>
+                    </button>
                 </Link>
             </span>
       </Card>

@@ -5,12 +5,32 @@ h2 {
 .list-view-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    overflow: auto;
 }
 
 .background {
     color: white;
+    display: flex;
+    flex-flow: column nowrap;
 }
 
 body {
     background: #424242;
+}
+
+.row {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.listview-header {
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    height: min-content;
+}
+
+.listview-header h2 {
+    color: black;
+    margin: 0;
 }

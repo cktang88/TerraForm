@@ -30,10 +30,11 @@ function ListView(props) {
 
     return (
         <div className='background'>
-            <h2>Submissions</h2>
-            <br></br>
-            <div>
-                <SearchInput id='searchbar' placeholder='Search' type='text' onChange={(e) => searchChanged(e.target.value)}></SearchInput >
+            <div className="row listview-header">
+                <h2>Submissions</h2>
+                <div>
+                    <SearchInput id='searchbar' placeholder='Search' type='text' onChange={(e) => searchChanged(e.target.value)}></SearchInput >
+                </div>
             </div>
 
             <div className='list-view-wrapper'>
