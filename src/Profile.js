@@ -51,12 +51,12 @@ function Profile(props) {
             <div className='profile-display'>
             <Pane id="mid-container">
                 <div className='table' id="left-component">
-                    <Table>
+                    <Table className='table-proper'>
                     <Table.Body>
                     {(Object.keys(item) || []).map((key, i) => {
                     return (
-                        <Table.Row key={i}>
-                        <Table.TextCell>{key}</Table.TextCell> 
+                        <Table.Row height="auto" paddingY={12} key={i}>
+                        <Table.TextCell className='table-key'>{key}</Table.TextCell> 
                         
                         <Table.TextCell>{item[key]}</Table.TextCell>
                         </Table.Row>
@@ -68,6 +68,7 @@ function Profile(props) {
                 <div id="right-component">
                 </div>
             </Pane>
+            <div className='chat-box'>
             <Pane className='bottom-container'>
                 <ul>
                     {comments.map((comment, i) => {
@@ -80,6 +81,7 @@ function Profile(props) {
                             )
                     })}
                 </ul>
+                </Pane>
                 
                 <div className='comment'>
                 <Pane>
@@ -89,8 +91,10 @@ function Profile(props) {
                     </Button>
                 </Pane>
                 </div>
+    
                 
-            </Pane>
+            
+            </div>
             </div>
         
         </div>
