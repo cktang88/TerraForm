@@ -1,13 +1,13 @@
 # TerraForm
 
-A better viewer for Google Forms responses.
-Made during CrimsonHacks 2019.
+### A better viewer for Google Forms responses.
+Made during CrimsonHacks 2019 :)
 
 ![List View](./assets/listview.png)
-List View, showing search + brief bio about each submission
+#### List View, showing search + brief bio about each submission
 
 ![Profile View](./assets/profileview.png)
-Profile View, showing full user form data and comments from reviewers
+#### Profile View, showing full user form data and comments from reviewers
 
 Usage
 ---
