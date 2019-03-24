@@ -5,6 +5,8 @@ import styled from 'styled-components';
 
 import './Profile.css'
 
+import {Link} from 'react-router-dom'
+
 import {postComment} from './Api';
 import { Table, Pane, TextInput, Button, Card } from 'evergreen-ui';
 
@@ -13,9 +15,16 @@ function Profile(props) {
     console.log(item);
     return (
         <div>
+            <div>
+                <Link to='/'>
+                    <Button type='button'>
+                        Back
+                    </Button>
+                </Link>
+            </div>
             <Pane id="top-container">
-                <h2>{item.name}</h2>
-                <h3>{item.year}</h3>
+                <h2>{item['Name']}</h2>
+                <h3>{item['Year']}</h3>
             </Pane>
             <Pane id="mid-container">
                 <div id="left-component">
