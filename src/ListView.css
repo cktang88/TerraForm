@@ -1,4 +1,16 @@
+h2 {
+    font-family: 'Roboto', sans-serif;
+}
+
 .list-view-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+}
+
+.background {
+    color: white;
+}
+
+body {
+    background: #424242;
 }

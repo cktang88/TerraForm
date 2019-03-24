@@ -1,14 +1,16 @@
-.item {
-
+h2 {
+    font-family: 'Francois One', sans-serif;
 }
 
 .wrapper {
     display: block;
+    font-family: 'Roboto', sans-serif;
+    color: black;
     overflow: hidden;
     font-size: 1em;
     text-align: center;
 }
 
-span {
-    
+.view {
+    padding: 5px;
 }

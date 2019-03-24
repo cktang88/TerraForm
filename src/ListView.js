@@ -21,7 +21,7 @@ function ListView(props) {
     }
 
     return (
-        <div>
+        <div className='background'>
             <h2>Submissions</h2>
             <br></br>
             <div>
