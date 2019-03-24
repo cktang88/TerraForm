@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import './Profile.css'
 
-import {postData} from './Api';
+import {postComment} from './Api';
 import { Pane, TextInput, Button, Card } from 'evergreen-ui';
 
 function Profile(props) {
@@ -54,8 +54,8 @@ function Profile(props) {
     )
 }
 
-function submitComment(text, author) {
-    postData(text, author);
+function submitComment(id, text, author) {
+    postComment(id, text, author);
 }
 
 export default Profile;

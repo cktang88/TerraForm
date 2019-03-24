@@ -3,19 +3,33 @@ const KEY = 'AIzaSyB5NPQXUnbJYcNBwZ0vHwbpkCv8Jp-EB5Y';
 
 const makeURL = range => `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${range}?key=${KEY}`;
 
+const commentsURL = 'https://api.myjson.com/bins/crimsongoogform';
+
 function fetchData() {
     return fetch(makeURL('Sheet1')).then(resp => resp.json())
 }
 
+// fetch comments by key
+const fetchComments = (key) => {
+    return fetch(makeURL)
+    .then(data => data.json())
+    .then(items => items[key]);
+}
 
-function postData(data, range) {
+const postComment = (key, author, text) => {
+
+    const data = {timestamp: Date.now(), author, text};
+
+    fetchComments(key)
+    .then()
+
     // PUT to excel spreadsheet
     return putHelper(BASE_URL, data)
     .then(data => console.log(JSON.stringify(data))) // JSON-string from `response.json()` call
     .catch(error => console.error(error));
 }
 
-function putHelper(url = ``, data = {}) {
+const putHelper = (url = commentsURL, data = {}) => {
     // Default options are marked with *
       return fetch(url, {
           method: "PUT", // *GET, POST, PUT, DELETE, etc.
@@ -33,4 +47,4 @@ function putHelper(url = ``, data = {}) {
       .then(response => response.json()); // parses JSON response into native Javascript objects 
   }
 
-export {fetchData, postData};
+export {fetchData, postComment};
