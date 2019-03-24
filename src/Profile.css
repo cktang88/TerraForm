@@ -3,12 +3,25 @@
     /* font-size: 2em; */
 }
 
+.title-container {
+    color: white;
+}
+
+.bottom-container {
+    height: 100px;
+}
+
 .profile-display {
+    display: grid;
+    grid-template-columns: 66% 34%;
+    grid-template-rows: 20px;
     color: white;
 }
 
 .button {
-    padding-top: 30px;
+    position: absolute;
+    padding-left: 30px;
+    float: left;
 }
 
 .comment {

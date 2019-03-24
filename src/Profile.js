@@ -36,11 +36,19 @@ function Profile(props) {
     useEffect(refreshComments, []);
 
     return (
-        <div className='profile-display'>
+        <div className='title-container'>
             <Pane id="top-container">
+            <div className='button'>
+                <Link to='/'>
+                    <Button type='button'>
+                        Back
+                    </Button>
+                </Link>
+            </div>
                 <h2>{item['Name']}</h2>
                 <h3>{item['Year']}</h3>
             </Pane>
+            <div className='profile-display'>
             <Pane id="mid-container">
                 <div className='table' id="left-component">
                     <Table>
@@ -60,7 +68,7 @@ function Profile(props) {
                 <div id="right-component">
                 </div>
             </Pane>
-            <Pane id="bottom-container">
+            <Pane className='bottom-container'>
                 <ul>
                     {comments.map((comment, i) => {
                         return (
@@ -81,15 +89,9 @@ function Profile(props) {
                     </Button>
                 </Pane>
                 </div>
-                <div className='button'>
-                <Link to='/'>
-                    <Button type='button'>
-                        Back
-                    </Button>
-                </Link>
-            </div>
                 
             </Pane>
+            </div>
         
         </div>
     )
