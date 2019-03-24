@@ -16,11 +16,16 @@ function Profile(props) {
 
     const submitComment = () => {
         const text = document.getElementById('newcomment').value;
+        // a bit of validation
+        if (text.trim().length < 1) {
+            console.log("can't submit empty comment")
+            return; // can't submit empty
+        }
+
         document.getElementById('newcomment').value = ''; // clear
         const author = 'Current User' // TODO: login stuff
         postComment(unique_id, text, author)
         .then(() => refreshComments()); // refresh after post
-
     }
 
     const [comments, setComments] = useState([]);
