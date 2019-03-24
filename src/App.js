@@ -18,6 +18,7 @@ function App() {
   // update
   useEffect(() => {
     fetchData().then((data) =>{
+      data.values.shift();
       setData(data.values);
       console.log('updated: ', data);
     })
