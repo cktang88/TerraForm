@@ -5,24 +5,25 @@ import Item from './Item.js';
 import './ListView.css'
 
 import {SearchInput} from 'evergreen-ui';
-
 import jwtDecode from 'jwt-decode';
 
 function ListView(props) {
     const orig_items = props.items;
     const [items, setItems] = useState(props.items);
 
-    const id_token = window.location.href.split('id_token=')[1].split('&')[0]; // hacky way to get url param
-
-    const person = jwtDecode(id_token);
-    window.person = person.name || person.email; // global state, should prob use Context API
+    let id_token, person;
+    const {href} = window.location;
+    if (href.includes('id_token=')) {
+        id_token = href.split('id_token=')[1].split('&')[0]; // hacky way to get url param
+        person = jwtDecode(id_token);
+        window.person = person.name || person.email; // global state, should prob use Context API
+    }
 
     // everything search
     function searchChanged(query) {
         query = query.trim().toLowerCase();
         console.log(query);
         setItems(orig_items.filter(e => {
-            // console.log(e['Name'], query, JSON.stringify(e).includes(query));
             return JSON.stringify(e).toLowerCase().includes(query)
         }));
     }

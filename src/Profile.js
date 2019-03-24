@@ -8,7 +8,7 @@ import './Profile.css'
 import {Link} from 'react-router-dom'
 
 import {fetchComments, postComment} from './Api';
-import { Table, Pane, ThemeConsumere, TextInput, Button, Card } from 'evergreen-ui';
+import { Table, Pane, TextInput, Button, Card } from 'evergreen-ui';
 
 
 function Profile(props) {
