@@ -14,9 +14,9 @@ function Card(props) {
         <p>{props.text}</p>
 
         <ul>
-        {(props.comments || []).map(comment => {
+        {(props.comments || []).map((comment, i) => {
            return (
-            <div>
+            <div key={i}>
                 <h2>{props.comments.author}</h2>
                 <div>{comment}</div>
             </div>
