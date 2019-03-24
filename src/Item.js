@@ -36,8 +36,4 @@ function Item(props) {
     );
   }
 
-  function submitComment(text, author) {
-      // POST to excel spreadsheet
-  }
-
   export default Item;
