@@ -10,8 +10,10 @@ function Card(props) {
 
     return (
       <div>
-        <p>id {props.timestamp}</p>
-        <p>{props.text}</p>
+
+        <p>{name}</p>
+        <p>{timestamp}</p>
+        <p>{year}</p>
 
         <ul>
         {(props.comments || []).map((comment, i) => {
