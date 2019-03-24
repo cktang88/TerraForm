@@ -3,6 +3,10 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
+function submitComment(comment) {
+    console.log(comment);
+}
+
 function Profile(props) {
     return (
         <div>
