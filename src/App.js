@@ -38,7 +38,7 @@ function App() {
   // update once initially
   useEffect(() => {
     updateFormsData();
-    setInterval(updateFormsData, 5000); // every five secs periodic update
+    setInterval(updateFormsData, 50000); // every fifty secs periodic update
   }, []);
 
   return (

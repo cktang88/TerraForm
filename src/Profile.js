@@ -10,8 +10,9 @@ import {Link} from 'react-router-dom'
 import {fetchComments, postComment} from './Api';
 import { Table, Pane, ThemeConsumere, TextInput, Button, Card } from 'evergreen-ui';
 
+
 function Profile(props) {
-    const item = props.history.location.state;
+    const {item, name, dispElems} = props.history.location.state;
     const unique_id = item.uid;
 
     const submitComment = () => {
@@ -50,8 +51,13 @@ function Profile(props) {
                     </Button>
                 </Link>
             </div>
-                <h2>{item['Name']}</h2>
-                <h3>{item['Year']}</h3>
+            <h2>{name}</h2>
+            <div>
+            {dispElems.map((elem, index) => {
+                return (
+                    <h3 key={index}>{elem}</h3>
+                )})
+            }</div>
             </Pane>
             <div className='profile-display'>
             <Pane id="mid-container">

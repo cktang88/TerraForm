@@ -1,7 +1,5 @@
 import {SPREADSHEET_ID, KEY, COMMENTS_URL} from '../config/config.js';
 
-console.log(SPREADSHEET_ID);
-
 const makeURL = range => `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${range}?key=${KEY}`;
 
 const fetchData = () => {
