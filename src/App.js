@@ -7,7 +7,7 @@ import ListView from './ListView';
 import Profile from './Profile';
 import fetchData from './Api';
 
-import { BrowserRouter, Route } from 'react-router-dom';;
+import { BrowserRouter, Route , Switch} from 'react-router-dom';;
 
 
 function App() {
@@ -24,16 +24,16 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">Gforms view</h1>
-      </header>
-      <Switch>
-        <Route exact path='/' component = {<ListView items={data}/>}/>
-        <Route path='/user' component = {Profile}/>
-      </Switch>
-    </div>
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Gforms view</h1>
+        </header>
+        <Switch>
+          <Route exact path='/' component = {() => <ListView items={data}/>}/>
+          <Route path='/user' component = {Profile}/>
+        </Switch>
+      </div>
   );
 }
 
