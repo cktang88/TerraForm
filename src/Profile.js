@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import './Profile.css'
 
 import {postComment} from './Api';
-import { Pane, TextInput, Button, Card } from 'evergreen-ui';
+import { Table, Pane, TextInput, Button, Card } from 'evergreen-ui';
 
 function Profile(props) {
     const item = props.history.location.state;
@@ -19,13 +19,19 @@ function Profile(props) {
             </Pane>
             <Pane id="mid-container">
                 <div id="left-component">
-                    <ul>
-                    {(item.pref_roles.split(',') || []).map((role, i) => {
+                    <Table>
+                    <Table.Body>
+                    {(Object.keys(item) || []).map((key, i) => {
                     return (
-                        <li>{role}</li>
+                        <Table.Row key={i}>
+                        <Table.TextCell>{key}</Table.TextCell> 
+                        
+                        <Table.TextCell>{item[key]}</Table.TextCell>
+                        </Table.Row>
                         )
                     })}
-                    </ul>
+                    </Table.Body>
+                    </Table>
                 </div>
                 <div id="right-component">
                 </div>

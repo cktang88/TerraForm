@@ -11,7 +11,7 @@ import {Route, Switch} from 'react-router-dom';
 
 // This function creates a datapoint object, with
 // the first row of the spreadsheet as its fields
-function createObject(headers, arr) {
+const createObject = (headers, arr) => {
   let obj = {};
   headers.forEach((header, i) => {
     obj[header] = arr[i];
@@ -29,8 +29,9 @@ function App() {
   useEffect(() => {
     fetchData().then((ogData) =>{
       const headers = ogData.values.shift();
-      setData(ogData.values.map(elem => createObject(headers, elem)));
-      console.log('arr of arr: ', ogData.values);
+      const newdata = ogData.values.map(elem => createObject(headers, elem));
+      setData(newdata);
+      console.log('arr of arr: ', newdata);
     })
   }, []);
 
