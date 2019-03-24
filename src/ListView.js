@@ -15,7 +15,7 @@ function ListView(props) {
         query = query.trim().toLowerCase();
         console.log(query);
         setItems(orig_items.filter(e => {
-            console.log(e['Name'], query, JSON.stringify(e).includes(query));
+            // console.log(e['Name'], query, JSON.stringify(e).includes(query));
             return JSON.stringify(e).toLowerCase().includes(query)
         }));
     }

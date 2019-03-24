@@ -1,18 +1,35 @@
 // profile page
 
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
 import './Profile.css'
 
 import {Link} from 'react-router-dom'
 
-import {postComment} from './Api';
+import {fetchComments, postComment} from './Api';
 import { Table, Pane, TextInput, Button, Card } from 'evergreen-ui';
 
 function Profile(props) {
     const item = props.history.location.state;
-    console.log(item);
+    const unique_id = item.uid;
+
+    const submitComment = () => {
+        const text = document.getElementById('newcomment').value;
+        const author = 'Current User' // TODO: login stuff
+        postComment(unique_id, text, author);
+    }
+
+    const [comments, setComments] = useState([]);
+
+    // update
+    useEffect(() => {
+        fetchComments().then(comments => {
+            console.log('updated comments: ', comments);
+            setComments(comments[unique_id] || []);
+      })
+    }, []);
+
     return (
         <div className='profile-display'>
             <Pane id="top-container">
@@ -40,20 +57,21 @@ function Profile(props) {
             </Pane>
             <Pane id="bottom-container">
                 <ul>
-                    {(props.comments || []).map((comment, i) => {
-                    return (
-                        <Card key={i}>
-                            <h2>{props.comments.author}</h2>
-                            <div>{comment}</div>
-                        </Card>
-                        )
+                    {comments.map((comment, i) => {
+                        return (
+                            <Card key={i} margin={30}>
+                                <div>{comment.author}</div>
+                                <div>{comment.text}</div>
+                                <div>{comment.timestamp}</div>
+                            </Card>
+                            )
                     })}
                 </ul>
                 
                 <div className='comment'>
                 <Pane>
-                    <TextInput type='text' placeholder='Add comment'></TextInput>
-                    <Button appearance="primary" intent="success" onClick={() => submitComment()}>
+                    <TextInput id='newcomment' type='text' placeholder='Add comment'></TextInput>
+                    <Button appearance="primary" intent="success" onClick={submitComment}>
                         Submit
                     </Button>
                 </Pane>
@@ -70,10 +88,6 @@ function Profile(props) {
         
         </div>
     )
-}
-
-function submitComment(id, text, author) {
-    postComment(id, text, author);
 }
 
 export default Profile;
