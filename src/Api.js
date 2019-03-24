@@ -6,10 +6,14 @@ function build_request() {
     return BASE_URL; 
 }
 
-fetch(build_request()).then(resp => {
-    return resp.json();
-}).then( data => {
-    console.log(data);
-}).catch(err => {
-    console.log(err);
-});
+function fetchData () {
+    fetch(build_request()).then(resp => {
+        return resp.json();
+    }).then( data => {
+        console.log(data);
+    }).catch(err => {
+        console.log(err);
+    });
+}
+
+export default fetchData;

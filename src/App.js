@@ -5,6 +5,7 @@ import logo from './logo.svg';
 import './App.css';
 import ListView from './ListView';
 
+import fetchData from './Api';
 
 
 function App() {
@@ -13,10 +14,9 @@ function App() {
 
   // update
   useEffect(() => {
-    const subscription = props.source.subscribe();
+    const data = fetchData();
     return () => {
-      // Clean up the subscription
-      subscription.unsubscribe();
+  
     };
   });
 
@@ -26,7 +26,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h1 className="App-title">Welcome to React</h1>
       </header>
-      <ListView/>
+      <ListView items={data}/>
       <p className="App-intro">
         To get started, edit <code>src/App.js</code> and save to reload.
       </p>

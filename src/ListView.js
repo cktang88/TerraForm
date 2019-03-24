@@ -13,17 +13,17 @@ function ListView() {
             </div>
 
             <ul>
-            {props.items.forEach(function(item) {
-            return (
-                <Card id={item.id} text={item.text} />)
-            })} 
+            {this.props.items.forEach(item => {
+                return (
+                    <Card id={item.id} text={item.text} />)
+                })}
             </ul>
         </div>
     )
 }
 
 function searchChanged() {
-    
+
 }
 
 export default ListView;
