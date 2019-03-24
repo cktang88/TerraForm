@@ -7,27 +7,35 @@ import './ListView.css'
 import {SearchInput} from 'evergreen-ui';
 
 function ListView(props) {
-    console.log(props);
+    const orig_items = props.items;
+    const [items, setItems] = useState(props.items);
+
+    // everything search
+    function searchChanged(query) {
+        query = query.trim().toLowerCase();
+        console.log(query);
+        setItems(orig_items.filter(e => {
+            console.log(e['Name'], query, JSON.stringify(e).includes(query));
+            return JSON.stringify(e).toLowerCase().includes(query)
+        }));
+    }
+
     return (
         <div>
             <h2>Submissions</h2>
             <br></br>
             <div>
-                <SearchInput placeholder='Search' type='text' onChange={searchChanged}></SearchInput >
+                <SearchInput id='searchbar' placeholder='Search' type='text' onChange={(e) => searchChanged(e.target.value)}></SearchInput >
             </div>
 
             <div className='list-view-wrapper'>
-            {(props.items || []).map((elem, index) => {
+            {(items || []).map((elem, index) => {
                 return (
                     <Item item={elem} uid={index} key={index}/>)
                 })}
             </div>
         </div>
     )
-}
-
-function searchChanged() {
-
 }
 
 export default ListView;
