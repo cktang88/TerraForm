@@ -8,7 +8,7 @@ import './Profile.css'
 import {Link} from 'react-router-dom'
 
 import {fetchComments, postComment} from './Api';
-import { Table, Pane, TextInput, Button, Card } from 'evergreen-ui';
+import { Table, Pane, ThemeConsumere, TextInput, Button, Card } from 'evergreen-ui';
 
 function Profile(props) {
     const item = props.history.location.state;
@@ -16,19 +16,24 @@ function Profile(props) {
 
     const submitComment = () => {
         const text = document.getElementById('newcomment').value;
+        document.getElementById('newcomment').value = ''; // clear
         const author = 'Current User' // TODO: login stuff
-        postComment(unique_id, text, author);
+        postComment(unique_id, text, author)
+        .then(() => refreshComments()); // refresh after post
+
     }
 
     const [comments, setComments] = useState([]);
 
-    // update
-    useEffect(() => {
+    const refreshComments = () => {
         fetchComments().then(comments => {
             console.log('updated comments: ', comments);
             setComments(comments[unique_id] || []);
       })
-    }, []);
+    };
+
+    // update once in beginning
+    useEffect(refreshComments, []);
 
     return (
         <div className='profile-display'>
