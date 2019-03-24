@@ -6,7 +6,7 @@ Made during CrimsonHacks 2019.
 Usage
 ---
 
-1. Copy `/config/config-template.js` into `/config/config.js` and fill in your API key. You can get it [here](https://developers.google.com/sheets/api/guides/authorizing#APIKey).
+1. Copy `/config/config-template.js` into `/config/config.js` and fill in the necessary config variables. You can get Google API keys [here](https://developers.google.com/sheets/api/guides/authorizing#APIKey).
 
 2. Install dependencies and run!
 ```bash
@@ -31,8 +31,9 @@ module.exports = {
 Built with:
 ---
 
-- React (with hooks!)
+- React (with [hooks](https://reactjs.org/docs/hooks-intro.html)!)
 - React Router
 - CSS Grid + Flexbox
 - Google Sheets API
 - https://myjson.com/api
+- [react-google-login](https://github.com/anthonyjgrove/react-google-login) for Github SSO
