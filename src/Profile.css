@@ -36,8 +36,27 @@
     display: block;
     background:#212121;
     -webkit-text-fill-color: white;
+    margin: 1em auto;
+
 }
 
 .table-key {
     font-weight: bold;
+    float: left;
+}
+
+table {
+    table-layout: fixed;
+}
+
+tr {
+    /* border-color: white; */
+}
+
+td {
+    /* float: left; */
+    
+    margin: 1em;
+    word-wrap: break-word;
+    /* border-left: white; */
 }

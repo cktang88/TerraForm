@@ -56,19 +56,16 @@ function Profile(props) {
             <div className='profile-display'>
             <Pane id="mid-container">
                 <div className='table' id="left-component">
-                    <Table className='table-proper'>
-                    <Table.Body>
+                    <table className='table-proper'>
                     {(Object.keys(item) || []).map((key, i) => {
                     return (
-                        <Table.Row height="auto" paddingY={12} key={i}>
-                        <Table.TextCell className='table-key'>{key}</Table.TextCell> 
-                        
-                        <Table.TextCell>{item[key]}</Table.TextCell>
-                        </Table.Row>
+                        <tr key={i}>
+                        <td className='table-key'>{key}</td> 
+                        <td>{item[key]}</td>
+                        </tr>
                         )
                     })}
-                    </Table.Body>
-                    </Table>
+                    </table>
                 </div>
                 <div id="right-component">
                 </div>
