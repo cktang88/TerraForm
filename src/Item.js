@@ -9,7 +9,8 @@ import { Button, Card } from 'evergreen-ui';
 
 function Item(props) {
     
-    const [timestamp, name, year] = props.item;
+    const [timestamp, name, year, pref_roles, comments] = props.item;
+    console.log(props.item);
 
     const unique_id = props.uid;
 
@@ -27,7 +28,8 @@ function Item(props) {
             <span className='btnlink'>
                 <Link to={{
                   pathname: `/user/${unique_id}`,
-                  state: {name}
+                  // TODO: Pass the state fields dynamically (not specifically tailored to this app)
+                  state: {timestamp, name, year, unique_id, pref_roles, comments}
                 }}>
                     <Button type='button'>
                         View Profile
