@@ -44,3 +44,4 @@ Built with:
 - https://myjson.com/api
 - [react-google-login](https://github.com/anthonyjgrove/react-google-login) for Github SSO
 - [Evergreen UI](https://evergreen.segment.com/) toolkit
+- [rwieruch/parcel-react](https://github.com/rwieruch/parcel-react) boilerplate
